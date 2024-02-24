@@ -17,4 +17,40 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: "Inter", sans-serif;
+  background-color: var(--base-background-color);
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--accent-color);
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--base-font);
+  }
+}
+
+.content__section {
+  background-color: var(--base-background-color);
+  width: clamp(375px, 50vw, 696px);
+  margin: auto;
+  border: 2px solid #000;
+}
+
+.header {
+  margin-block-start: 102px;
+  margin-block-end: 104px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.section__card-img {
+  width: 100%;
+  border-block-start: 2px solid #000;
+  border-block-end: 2px solid #000;
 }
