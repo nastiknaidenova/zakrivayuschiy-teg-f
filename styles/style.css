@@ -27,30 +27,221 @@
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-family: var(--base-font);
+    font-family: var(--base-font-family);
   }
 }
 
 .content__section {
   background-color: var(--base-background-color);
-  width: clamp(375px, 50vw, 696px);
+  width: clamp(375px, 50vw, 700px);
   margin: auto;
-  border: 2px solid #000;
+  border: var(--base-border);
 }
 
 .header {
-  margin-block-start: 102px;
-  margin-block-end: 104px;
+  margin-block: var(--header-footer-margin-block);
+  font-family: var(--accent-font-family);
+  font-weight: var(--base-content-font-weight);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title {
+  margin-block-start: clamp(120px, 9.444vw, 136px);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-size: 23px;
+  margin-block-start: 20px;
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.header__theme-menu {
+  margin-block: 25px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-size: var(--accent-font-size);
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-menu__button:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶️";
+  color: gray;
+  position: absolute;
+  left: -20px;
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 54px;
+  gap: var(--card-gap);
+}
+
+.section__card-title {
+  font-size: var(--base-font-size);
+  font-weight: var(--base-title-font-weight);
+  padding-inline: 10px;
+  padding-block: 3px;
+  border-block-end: var(--base-border);
+}
+
+.section__card-figure {
+  position: relative;
+}
+
+.section__card-figure::after {
+  content: "";
+  position: absolute;
+  font-family: var(--accent-font-family);
+  font-size: var(--accent-font-size);
+  top: 25px;
+  right: 25px;
+  mix-blend-mode: hard-light;
+  text-shadow: var(--text-shadow);
+}
+
+@supports ((text-stroke: var(--text-stroke)) or (-webkit-text-stroke: var(--text-stroke))) {
+  .section__card-figure::after {
+    -webkit-text-stroke: var(--text-stroke);
+    text-stroke: var(--text-stroke);
+    text-shadow: none;
+  }
+}
+
+.sprint__0 .section__card-figure::after {
+  content: "<Web-Inspiration>";
+}
+.sprint__1-start .section__card-figure::after {
+  content: "<Start moving>";
+}
+.sprint__1-final .section__card-figure::after {
+  content: "<Forward Momentum>";
+}
+.sprint__2-start .section__card-figure::after {
+  content: "<Progressive Growth>";
+}
+.sprint__2-final .section__card-figure::after {
+  content: "<Supportive Synergy>";
+}
+.sprint__3-start .section__card-figure::after {
+  content: "<Innovative Resilience>";
+}
+.sprint__3-final .section__card-figure::after {
+  content: "<Inspired Endurance>";
+}
+.sprint__4 .section__card-figure::after {
+  content: "<Design Expression>";
 }
 
 .section__card-img {
   width: 100%;
-  border-block-start: 2px solid #000;
-  border-block-end: 2px solid #000;
+}
+
+.sprint__0 .section__card-img {
+  filter: grayscale(100%);
+}
+.sprint__1-start .section__card-img {
+  filter: sepia(80%);
+}
+.sprint__1-final .section__card-img {
+  filter: blur(2px);
+}
+.sprint__2-start .section__card-img {
+  filter: brightness(150%);
+}
+.sprint__2-final .section__card-img {
+  filter: contrast(200%);
+}
+.sprint__3-start .section__card-img {
+  filter: hue-rotate(180deg);
+}
+.sprint__3-final .section__card-img {
+  filter: invert(100%) sepia(30%) hue-rotate(90deg);
+}
+.sprint__4 .section__card-img {
+  filter: saturate(200%);
+}
+
+.section__card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px;
+  border-block-start: var(--base-border);
+}
+
+.section__card-paragraph {
+  font-size: var(--base-font-size);
+  font-weight: var(--base-content-font-weight);
+}
+
+.card__like-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: end;
+  width: 118px;
+  border: var(--base-border);
+  padding-block: 7px;
+  padding-inline: 15px;
+  font-family: var(--accent-font-family);
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+}
+
+.like-icon svg {
+  width: 27px;
+  position: absolute;
+  left: -40px;
+  bottom: 3px;
+}
+
+.footer {
+  margin-block-start: var(--card-gap);
+  margin-block-end: var(--header-footer-margin-block);
+  width: clamp(310px, 50vw, 339px);
+  border: var(--base-border);
+}
+
+.footer__button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  font-family: var(--accent-font-family);
+  font-size: var(--accent-font-size);
+  padding-block: 15px;
+  padding-inline: 19px;
+}
+
+.footer__button svg {
+  width: 21px;
+  height: 21px;
+}
+
+.footer__button:hover {
+  cursor: pointer;
 }
