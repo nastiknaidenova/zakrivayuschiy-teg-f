@@ -53,7 +53,6 @@
 }
 
 .header__subtitle {
-  font-size: 23px;
   margin-block-start: 20px;
   text-transform: uppercase;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
