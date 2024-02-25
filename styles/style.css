@@ -14,6 +14,10 @@
 
 */
 
+/***********************/
+/*******   BODY   ******/
+/***********************/
+
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -28,11 +32,11 @@
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--base-font-family);
-    font-variation-settings: 'wght' 400;
+    font-variation-settings: var(--base-content-font-weight);
   }
   .section__card-title {
     font-family: var(--base-font-family);
-    font-variation-settings: 'wght' 700;
+    font-variation-settings: var(--base-title-font-weight);
   }
 }
 
@@ -42,6 +46,10 @@
   margin: auto;
   border: var(--base-border);
 }
+
+/*************************/
+/*******   HEADER   ******/
+/*************************/
 
 .header {
   margin-block: var(--header-footer-margin-block);
@@ -93,6 +101,10 @@
   position: absolute;
   left: -20px;
 }
+
+/**************************/
+/*******   CONTENT   ******/
+/**************************/
 
 .main {
   display: flex;
@@ -194,7 +206,6 @@
 
 .section__card-paragraph {
   font-size: var(--base-font-size);
-  font-weight: var(--base-content-font-weight);
 }
 
 .card__like-button {
@@ -220,6 +231,10 @@
   left: -40px;
   bottom: 3px;
 }
+
+/*************************/
+/*******   FOOTER   ******/
+/*************************/
 
 .footer {
   margin-block-start: var(--card-gap);
