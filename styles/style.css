@@ -28,6 +28,11 @@
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--base-font-family);
+    font-variation-settings: 'wght' 400;
+  }
+  .section__card-title {
+    font-family: var(--base-font-family);
+    font-variation-settings: 'wght' 700;
   }
 }
 
@@ -41,7 +46,6 @@
 .header {
   margin-block: var(--header-footer-margin-block);
   font-family: var(--accent-font-family);
-  font-weight: var(--base-content-font-weight);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +89,7 @@
 
 .theme-menu__button:disabled::before {
   content: "▶️";
-  color: gray;
+  color: grey;
   position: absolute;
   left: -20px;
 }
@@ -98,7 +102,6 @@
 
 .section__card-title {
   font-size: var(--base-font-size);
-  font-weight: var(--base-title-font-weight);
   padding-inline: 10px;
   padding-block: 3px;
   border-block-end: var(--base-border);
