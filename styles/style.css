@@ -92,12 +92,12 @@
 
 .theme-menu__button:hover {
   cursor: pointer;
-  color: grey;
+  color: var(--theme-menu__button-hover-color);
 }
 
 .theme-menu__button:disabled::before {
   content: "▶️";
-  color: grey;
+  color: var(--theme-menu__button-hover-color);
   position: absolute;
   left: -20px;
 }
@@ -116,11 +116,13 @@
   font-size: var(--base-font-size);
   padding-inline: 10px;
   padding-block: 3px;
-  border-block-end: var(--base-border);
 }
 
 .section__card-figure {
+  display: flex;
   position: relative;
+  border-block-start: var(--base-border);
+  border-block-end: var(--base-border);
 }
 
 .section__card-figure::after {
@@ -128,6 +130,8 @@
   position: absolute;
   font-family: var(--accent-font-family);
   font-size: var(--accent-font-size);
+  color: transparent;
+  text-transform: uppercase;
   top: 25px;
   right: 25px;
   mix-blend-mode: hard-light;
@@ -169,13 +173,15 @@
 
 .section__card-img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sprint__0 .section__card-img {
-  filter: grayscale(100%);
+  filter: contrast(200%) brightness(80%);
 }
 .sprint__1-start .section__card-img {
-  filter: sepia(80%);
+  filter: contrast(200%) brightness(80%);
 }
 .sprint__1-final .section__card-img {
   filter: blur(2px);
@@ -184,16 +190,16 @@
   filter: brightness(150%);
 }
 .sprint__2-final .section__card-img {
-  filter: contrast(200%);
+  filter: contrast(200%) brightness(70%);
 }
 .sprint__3-start .section__card-img {
   filter: hue-rotate(180deg);
 }
 .sprint__3-final .section__card-img {
-  filter: invert(100%) sepia(30%) hue-rotate(90deg);
+  filter: invert(100%) sepia(30%) hue-rotate(90deg) brightness(90%);
 }
 .sprint__4 .section__card-img {
-  filter: saturate(200%);
+  filter: saturate(200%) brightness(80%);
 }
 
 .section__card-content {
@@ -201,7 +207,6 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-  border-block-start: var(--base-border);
 }
 
 .section__card-paragraph {
@@ -214,11 +219,12 @@
   justify-content: center;
   align-items: flex-start;
   align-self: end;
-  width: 118px;
+  min-width: 118px;
   border: var(--base-border);
   padding-block: 7px;
   padding-inline: 15px;
   font-family: var(--accent-font-family);
+  background-color: var(--base-background-color);
 }
 
 .card__like-button:hover {
@@ -230,6 +236,7 @@
   position: absolute;
   left: -40px;
   bottom: 3px;
+  fill: var(--accent-color);
 }
 
 /*************************/
@@ -241,24 +248,92 @@
   margin-block-end: var(--header-footer-margin-block);
   width: clamp(310px, 50vw, 339px);
   border: var(--base-border);
+  background-color: var(--base-background-color);
 }
 
 .footer__button {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
   border: none;
+  outline: none;
   font-family: var(--accent-font-family);
   font-size: var(--accent-font-size);
+  background-color: var(--base-background-color);
   padding-block: 15px;
   padding-inline: 19px;
+
 }
 
 .footer__button svg {
-  width: 21px;
-  height: 21px;
+  width: 21px; /*media*/
+  fill: var(--accent-color);
 }
 
 .footer__button:hover {
   cursor: pointer;
+}
+
+/*************************/
+/*******   DIALOG   ******/
+/*************************/
+
+.ok__dialog {
+  font-family: var(--accent-font-family);
+  text-transform: uppercase;
+  line-height: 150%;
+  color: var(--accent-color);
+  padding: 0;
+  font-size: 14px;
+  background-color: var(--base-background-color);
+}
+
+.ok__dialog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: clamp(341px, 50vw, 357px);
+  padding: 32px;
+  
+}
+
+.ok__dialog-figure {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ok__dialog-figure-text {
+  max-width: 234px;
+}
+
+.ok__dialog-figure svg {
+  min-width: 39px;
+  max-height: 39px;
+  fill: var(--accent-color); 
+}
+
+.ok__dialog-button button {
+  width: 100%;
+  min-height: 38px;
+  outline: none;
+  border: var(--base-border);
+  text-transform: uppercase;
+  background-color: var(--base-background-color);
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+} 
+
+/************************/
+/*******   MEDIA   ******/
+/************************/
+
+@media screen and (max-width: 675px) {
+  .footer__button svg {
+    width: 28px; /*media*/
+  }
 }
