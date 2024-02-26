@@ -416,12 +416,20 @@
           <svg viewBox="0 0 24 24">
             <use href="./svg/floppy.svg#floppy" />
           </svg>
-          <span class="ok__dialog-figure-text">Вставьте дискету, чтобы продолжить</span>
+          <span class="ok__dialog-figure-text"
+            >Вставьте дискету, чтобы продолжить</span
+          >
         </div>
         <div class="ok__dialog-button">
-          <button class="" type="button" onclick="window['dialog-id'].close();">
-            Ok
-          </button>
+          <form method="dialog">
+            <button
+              class=""
+              type="button"
+              onclick="window['dialog-id'].close();"
+            >
+              Ok
+            </button>
+          </form>
         </div>
       </div>
     </dialog>
