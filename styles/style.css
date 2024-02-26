@@ -87,18 +87,55 @@
   padding: 0;
   position: relative;
   cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .theme-menu__button:hover {
   cursor: pointer;
-  color: var(--theme-menu__button-hover-color);
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+@keyframes moveArrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
 }
 
 .theme-menu__button:disabled::before {
   content: "▶️";
-  color: var(--theme-menu__button-hover-color);
   position: absolute;
-  left: -20px;
+  left: -22px;
+  animation: moveArrow 0.5s ease-in-out alternate infinite;
 }
 
 /**************************/
@@ -210,31 +247,78 @@
   padding: 25px;
 }
 
+.card__icon-like-container {
+  display: flex;
+  align-self: flex-end;
+  gap: 10px;
+}
+
+.card__icon-button {
+  background: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: var(--base-border);
+}
+
+.card__icon-button svg {
+  width: 27px;
+  fill: var(--accent-color);
+}
+
 .card__like-button {
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  align-self: end;
+  align-items: center;
   min-width: 118px;
   border: var(--base-border);
-  padding-block: 7px;
-  padding-inline: 15px;
   font-family: var(--accent-font-family);
   background-color: var(--base-background-color);
   font-size: var(--accent-font-size);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+.card__like-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out, left 0.5s;
+}
+
+.card__like-button:hover::before {
+  transform: scaleX(1);
 }
 
 .card__like-button:hover {
   cursor: pointer;
 }
 
-.like-icon svg {
-  width: 27px;
-  position: absolute;
-  left: -40px;
-  bottom: 3px;
-  fill: var(--accent-color);
+.card__like-button:focus {
+  outline: none;
+  box-shadow: 2px 2px;
+}
+
+.sparks {
+  opacity: 0;
 }
 
 /*************************/
@@ -245,8 +329,8 @@
   margin-block-start: var(--card-gap);
   margin-block-end: var(--header-footer-margin-block);
   width: clamp(310px, 50vw, 339px);
-  border: var(--base-border);
   background-color: var(--base-background-color);
+  border: none;
 }
 
 .footer__button {
@@ -255,22 +339,45 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  border: none;
+  border: var(--base-border);
   outline: none;
   font-family: var(--accent-font-family);
   font-size: var(--accent-font-size);
   background-color: var(--base-background-color);
   padding-block: 15px;
   padding-inline: 19px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+}
+
+.footer__button:hover::before {
+  transform: translateX(100%);
 }
 
 .footer__button svg {
   width: 21px; /*media*/
-  fill: var(--accent-color);
+  fill: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .footer__button:hover {
   cursor: pointer;
+}
+
+.footer__button:focus {
+  box-shadow: 2px 2px;
 }
 
 /*************************/
@@ -318,6 +425,30 @@
   border: var(--base-border);
   text-transform: uppercase;
   background-color: var(--base-background-color);
+  font-family: var(--accent-font-family);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ok__dialog-button button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.ok__dialog-button button:hover::before {
+  transform: translateX(100%);
+}
+
+.ok__dialog-button button:focus {
+  box-shadow: 2px 2px;
 }
 
 .ok__dialog-button button:hover {

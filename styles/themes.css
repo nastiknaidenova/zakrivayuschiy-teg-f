@@ -8,12 +8,16 @@
 :root.theme-light {
   --base-background-color: rgb(255, 255, 255);
   --accent-color: rgb(0, 0, 0);
-  --base-content-font-weight: 'wght' 400, 'wdth' 100, 'opsz' 0;
-  --base-title-font-weight: 'wght' 700, 'wdth' 100, 'opsz' 0;
+  --base-content-font-weight: 'wght' 400;
+  --base-title-font-weight: 'wght' 700;
   --base-border: 2px solid #000;
   --text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
   --text-stroke: 0.5px #fff;
-  --theme-menu__button-hover-color: grey;
+  --button-text-color: #fff;
+  --heart-contour-color: #000;
+  --heart-sparks-color: red;
+  --heart-body-color: transparent;
+  --heart-core-color: transparent;
   --background-gradient: repeating-linear-gradient(
       to right,
       #d3d3d3 0,
@@ -35,12 +39,16 @@
   :root.theme-auto {
     --base-background-color: rgb(255, 255, 255);
     --accent-color: rgb(0, 0, 0);
-    --base-content-font-weight: 'wght' 400, 'wdth' 100, 'opsz' 0;
-    --base-title-font-weight: 'wght' 700, 'wdth' 100, 'opsz' 0;
+    --base-content-font-weight: 'wght' 400;
+    --base-title-font-weight: 'wght' 700;
     --base-border: 2px solid #000;
     --text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
     --text-stroke: 0.5px #fff;
-    --theme-menu__button-hover-color: grey;
+    --button-text-color: #fff;
+    --heart-contour-color: #000;
+    --heart-sparks-color: red;
+    --heart-body-color: transparent;
+    --heart-core-color: transparent;
     --background-gradient: repeating-linear-gradient(
         to right,
         #d3d3d3 0,
@@ -62,12 +70,16 @@
 :root.theme-dark {
   --base-background-color: rgb(0, 0, 0);
   --accent-color: rgb(0, 204, 20);
-  --base-content-font-weight: 'wght' 400, 'wdth' 100, 'opsz' 0;
-  --base-title-font-weight: 'wght' 800, 'wdth' 100, 'opsz' 0;
+  --base-content-font-weight: 'wght' 400;
+  --base-title-font-weight: 'wght' 800;
   --base-border: 2px solid rgb(0, 204, 20);
   --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
   --text-stroke: 0.5px #000;
-  --theme-menu__button-hover-color: rgb(80, 160, 90);
+  --button-text-color: rgb(0, 204, 20);
+  --heart-contour-color: rgb(0, 204, 20);
+  --heart-sparks-color: red;
+  --heart-body-color: transparent;
+  --heart-core-color: transparent;
   --background-gradient: repeating-linear-gradient(
       to right,
       #000 0,
@@ -89,12 +101,16 @@
   :root.theme-auto {
     --base-background-color: rgb(0, 0, 0);
     --accent-color: rgb(0, 204, 20);
-    --base-content-font-weight: 'wght' 400, 'wdth' 100, 'opsz' 0;
-    --base-title-font-weight: 'wght' 800, 'wdth' 100, 'opsz' 0;
+    --base-content-font-weight: 'wght' 400;
+    --base-title-font-weight: 'wght' 800;
     --base-border: 2px solid rgb(0, 204, 20);
     --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     --text-stroke: 0.5px #000;
-    --theme-menu__button-hover-color: rgb(80, 160, 90);
+    --button-text-color: rgb(0, 204, 20);
+    --heart-contour-color: rgb(0, 204, 20);
+    --heart-sparks-color: red;
+    --heart-body-color: transparent;
+    --heart-core-color: transparent;
     --background-gradient: repeating-linear-gradient(
         to right,
         #000 0,
