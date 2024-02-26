@@ -22,6 +22,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-size: var(--base-font-size);
+  font-family: "Inter-Variable", sans-serif;
   background-color: var(--base-background-color);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -227,6 +228,7 @@
   padding-inline: 15px;
   font-family: var(--accent-font-family);
   background-color: var(--base-background-color);
+  font-size: var(--accent-font-size);
 }
 
 .card__like-button:hover {
