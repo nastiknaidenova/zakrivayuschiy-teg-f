@@ -23,7 +23,6 @@
   min-block-size: 100dvb;
   font-size: var(--base-font-size);
   font-family: var(--base-font-family), sans-serif;
-  font-variation-settings: var(--base-content-font-weight);
   background-color: var(--base-background-color);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -33,16 +32,10 @@
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-family: var(--base-font-family);
     font-variation-settings: var(--base-content-font-weight);
   }
   .section__card-title {
-    font-family: var(--base-font-family);
     font-variation-settings: var(--base-title-font-weight);
-  }
-  .section__card-paragraph {
-    font-family: var(--base-font-family);
-    font-variation-settings: var(--base-content-font-weight);
   }
 }
 
