@@ -21,7 +21,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: "Inter", sans-serif;
+  font-size: var(--base-font-size);
   background-color: var(--base-background-color);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -37,6 +37,10 @@
   .section__card-title {
     font-family: var(--base-font-family);
     font-variation-settings: var(--base-title-font-weight);
+  }
+  .section__card-paragraph {
+    font-family: var(--base-font-family);
+    font-variation-settings: var(--base-content-font-weight);
   }
 }
 
@@ -209,10 +213,6 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-}
-
-.section__card-paragraph {
-  font-size: var(--base-font-size);
 }
 
 .card__like-button {
