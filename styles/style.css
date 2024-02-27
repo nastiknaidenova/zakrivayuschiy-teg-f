@@ -32,10 +32,10 @@
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-variation-settings: var(--base-content-font-weight);
+    font-variation-settings: "wght" var(--base-content-font-weight);
   }
   .section__card-title {
-    font-variation-settings: var(--base-title-font-weight);
+    font-variation-settings: "wght" var(--base-title-font-weight);
   }
 }
 
