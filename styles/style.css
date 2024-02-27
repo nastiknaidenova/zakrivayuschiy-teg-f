@@ -31,14 +31,7 @@
   font-variation-settings: "wght" var(--base-content-font-weight);
 }
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-variation-settings: "wght" var(--base-content-font-weight);
-  }
-  .section__card-title {
-    font-variation-settings: "wght" var(--base-title-font-weight);
-  }
-}
+
 
 .content__section {
   background-color: var(--base-background-color);
