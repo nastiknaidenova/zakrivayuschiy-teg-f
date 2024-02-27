@@ -28,6 +28,7 @@
   background-size: cover;
   background-attachment: fixed;
   color: var(--accent-color);
+  font-variation-settings: "wght" var(--base-content-font-weight);
 }
 
 @supports (font-variation-settings: normal) {
@@ -152,6 +153,7 @@
   font-size: var(--base-font-size);
   padding-inline: 10px;
   padding-block: 3px;
+  font-variation-settings: "wght" var(--base-title-font-weight);
 }
 
 .section__card-figure {
