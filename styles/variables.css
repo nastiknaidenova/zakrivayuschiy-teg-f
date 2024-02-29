@@ -1,9 +1,38 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --base-font-family: "Inter-Variable";
-  --accent-font-family: "PressStart2P";
+  /*common*/
+  --base-font-family: "Inter", Helvetica, sans-serif;
+  --accent-font-family: "PressStart2P", Consolas, fantasy;
   --base-font-size: 18px;
   --accent-font-size: 14px;
   --card-gap: 50px;
   --header-footer-margin-block: 100px;
+  /*dark*/
+  --base-background-color: rgb(0, 0, 0);
+  --accent-color: rgb(0, 204, 20);
+  --base-content-font-weight: 465;
+  --base-title-font-weight: 785;
+  --base-border: 2px solid rgb(0, 204, 20);
+  --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  --text-stroke: 1px #000;
+  --button-text-color: rgb(0, 204, 20);
+  --heart-contour-color: rgb(0, 204, 20);
+  --heart-sparks-color: red;
+  --heart-body-color: transparent;
+  --heart-core-color: transparent;
+  --background-gradient: repeating-linear-gradient(
+      to right,
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #007f0c, #004306);
 }

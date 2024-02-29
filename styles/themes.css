@@ -5,14 +5,44 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
+:root.theme-dark {
+  --base-background-color: rgb(0, 0, 0);
+  --accent-color: rgb(0, 204, 20);
+  --base-content-font-weight: 465;
+  --base-title-font-weight: 785;
+  --base-border: 2px solid rgb(0, 204, 20);
+  --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  --text-stroke: 1px #000;
+  --button-text-color: rgb(0, 204, 20);
+  --heart-contour-color: rgb(0, 204, 20);
+  --heart-sparks-color: red;
+  --heart-body-color: transparent;
+  --heart-core-color: transparent;
+  --background-gradient: repeating-linear-gradient(
+      to right,
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #000 0,
+      #000 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(to bottom, #007f0c, #004306);
+}
+
 :root.theme-light {
   --base-background-color: rgb(255, 255, 255);
   --accent-color: rgb(0, 0, 0);
   --base-content-font-weight: 400;
   --base-title-font-weight: 700;
   --base-border: 2px solid #000;
-  --text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
-  --text-stroke: 0.5px #fff;
+  --text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  --text-stroke: 1px #fff;
   --button-text-color: #fff;
   --heart-contour-color: #000;
   --heart-sparks-color: red;
@@ -36,14 +66,14 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root.theme-auto {
+  :root {
     --base-background-color: rgb(255, 255, 255);
     --accent-color: rgb(0, 0, 0);
     --base-content-font-weight: 400;
     --base-title-font-weight: 700;
     --base-border: 2px solid #000;
-    --text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
-    --text-stroke: 0.5px #fff;
+    --text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    --text-stroke: 1px #fff;
     --button-text-color: #fff;
     --heart-contour-color: #000;
     --heart-sparks-color: red;
@@ -64,67 +94,5 @@
         transparent 4px
       ),
       linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
-  }
-}
-
-:root.theme-dark {
-  --base-background-color: rgb(0, 0, 0);
-  --accent-color: rgb(0, 204, 20);
-  --base-content-font-weight: 400;
-  --base-title-font-weight: 800;
-  --base-border: 2px solid rgb(0, 204, 20);
-  --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-  --text-stroke: 0.5px #000;
-  --button-text-color: rgb(0, 204, 20);
-  --heart-contour-color: rgb(0, 204, 20);
-  --heart-sparks-color: red;
-  --heart-body-color: transparent;
-  --heart-core-color: transparent;
-  --background-gradient: repeating-linear-gradient(
-      to right,
-      #000 0,
-      #000 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      #000 0,
-      #000 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(to bottom, #007f0c, #004306);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root.theme-auto {
-    --base-background-color: rgb(0, 0, 0);
-    --accent-color: rgb(0, 204, 20);
-    --base-content-font-weight: 400;
-    --base-title-font-weight: 800;
-    --base-border: 2px solid rgb(0, 204, 20);
-    --text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-    --text-stroke: 0.5px #000;
-    --button-text-color: rgb(0, 204, 20);
-    --heart-contour-color: rgb(0, 204, 20);
-    --heart-sparks-color: red;
-    --heart-body-color: transparent;
-    --heart-core-color: transparent;
-    --background-gradient: repeating-linear-gradient(
-        to right,
-        #000 0,
-        #000 2px,
-        transparent 2px,
-        transparent 4px
-      ),
-      repeating-linear-gradient(
-        to bottom,
-        #000 0,
-        #000 2px,
-        transparent 2px,
-        transparent 4px
-      ),
-      linear-gradient(to bottom, #007f0c, #004306);
   }
 }
