@@ -25,7 +25,6 @@
   min-inline-size: 130px;
   min-block-size: 38px;
   border: var(--base-border);
-  outline: none;
   transition: box-shadow 0.3s ease;
   font-family: var(--accent-font-family);
   background-color: var(--base-background-color);
@@ -347,12 +346,12 @@
 /*************************/
 
 .ok__dialog {
-  overflow-x: hidden;
   font-family: var(--accent-font-family);
   text-transform: uppercase;
   line-height: 1.5;
   color: var(--accent-color);
-  padding: 0;
+  padding-inline: 30px; /*media*/
+  padding-block: 30px;
   font-size: 14px;
   background-color: var(--base-background-color);
 }
@@ -361,8 +360,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  inline-size: clamp(341px, 50vw, 357px);
-  padding: 32px;
 }
 
 .ok__dialog-figure {
@@ -394,8 +391,12 @@ dialog::backdrop {
 /*******   MEDIA   ******/
 /************************/
 
-@media screen and (max-inline-size: 675px) {
+@media screen and (max-width: 675px) {
   .footer__button svg {
-    inline-size: 28px; /*media*/
+    inline-size: 28px;
+  }
+
+  .ok__dialog {
+    padding-inline: 40px;
   }
 }

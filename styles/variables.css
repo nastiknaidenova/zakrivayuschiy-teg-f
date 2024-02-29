@@ -2,7 +2,7 @@
 :root {
   /*common*/
   --base-font-family: "Inter", Helvetica, sans-serif;
-  --accent-font-family: "PressStart2P", Consolas, fantasy;
+  --accent-font-family: "PressStart2P", "Comic Sans MS", fantasy;
   --base-font-size: 18px;
   --accent-font-size: 14px;
   --card-gap: 50px;
